@@ -1,8 +1,6 @@
 ---
-layout: default
-title: "Happy Jekylling!"
+# front matter tells Jekyll to process Liquid
 ---
 
-## You're ready to go!
-
-Start developing your Jekyll website.
+# Hello World
+## [this is a test link](https://github.com)
