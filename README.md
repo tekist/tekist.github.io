@@ -1,1 +1,0 @@
-# tekist.github.io
