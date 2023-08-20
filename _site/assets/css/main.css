@@ -1,7 +1,33 @@
 body {
-  background: #ffffff;
+  background: #0d0d13;
   color: #000000;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Verdana", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  color: white;
+  font-size: 250%;
+  font-weight: 400;
+  transition: all 0.175s ease-out;
+  text-shadow: 0px 0px 0px white;
+}
+h1:hover {
+  text-shadow: 0px 0px 4px white;
+}
+
+p {
+  color: white;
+}
+
+.banner {
+  position: static;
+  left: 0;
+  top: 0;
+  width: max(100%, 960px);
+  mask-image: linear-gradient(rgb(0, 0, 0), transparent);
 }
 
 /*# sourceMappingURL=main.css.map */
