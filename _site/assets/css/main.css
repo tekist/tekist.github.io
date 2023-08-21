@@ -22,11 +22,17 @@ p {
   color: white;
 }
 
+main {
+  margin-left: 16px;
+}
+
 .banner {
   position: static;
   left: 0;
   top: 0;
   width: max(100%, 960px);
+  height: 357px;
+  object-fit: cover;
   mask-image: linear-gradient(rgb(0, 0, 0), transparent);
 }
 
