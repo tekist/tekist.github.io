@@ -1,4 +1,4 @@
-$backgroundColor: #0b0b13;
+$backgroundColor: hsl(240, 35%, 6%);
 $bodyColor: #000000;
 $bodyFont: -apple-system,BlinkMacSystemFont,"Verdana",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 
@@ -47,23 +47,18 @@ nav{
   }
   /* Navigation anchors */
   a{
-    border: 1px solid white;
+    background-color: $backgroundColor;
     color: white;
     flex: 3;
-    padding-top: .115em;
+    padding-top: .2em;
     text-decoration: none;
     font-weight: 500;
     text-align: center;
-    text-shadow: 0px 0px 2px white;
-    box-shadow: 0px 0px 0px white;
-    transition: box-shadow .16s ease-out, color .15s ease-out, background-color .16s ease-out;
+    transition: background-color .125s ease-out;
     text-decoration-line: none;
 
     &:hover{
-      text-shadow: 0px 0px 2px $backgroundColor;
-      box-shadow: 0px 0px 4px white;
-      color: $backgroundColor;
-      background-color: white;
+      background-color: hsl(240, 35%, 12%);
     }
 
     .current{
@@ -75,24 +70,11 @@ nav{
 .wrapper-main{
   min-width: 540px;
   width: 66vw;
-  margin: auto;
+  margin: .5em auto 0 auto;
 }
 
 main{
   margin: 0 .5em 0 .5em;
-
-  p{
-    /* Currently just the profile picture */
-    img{
-      float: left;
-      padding: 0 .85em;
-      margin: auto;
-    }
-  }
-}
-
-.break-end{
-  clear: both;
 }
 
 body {

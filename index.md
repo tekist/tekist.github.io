@@ -4,8 +4,6 @@ layout: default
 title: Home
 ---
 
-![Picture of me!](/assets/images/profile.jpg "Picture of me")
-
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi scelerisque eu ultrices vitae auctor eu. Ac ut consequat semper viverra nam libero justo laoreet sit. Hendrerit dolor magna eget est lorem ipsum dolor sit. Leo in vitae turpis massa. Enim sed faucibus turpis in eu mi bibendum. Eu scelerisque felis imperdiet proin. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Nisi vitae suscipit tellus mauris a diam maecenas. Blandit turpis cursus in hac habitasse platea. Mollis nunc sed id semper risus in hendrerit gravida. Pharetra convallis posuere morbi leo urna molestie at elementum eu. Enim lobortis scelerisque fermentum dui faucibus in ornare.
 
 Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae. In nisl nisi scelerisque eu ultrices. Sem viverra aliquet eget sit. Faucibus interdum posuere lorem ipsum dolor sit amet consectetur. Pellentesque elit eget gravida cum sociis natoque penatibus et magnis. Platea dictumst quisque sagittis purus sit amet. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et. Blandit libero volutpat sed cras ornare arcu dui vivamus arcu. Tellus integer feugiat scelerisque varius. Feugiat in ante metus dictum at.
