@@ -16,45 +16,42 @@ p {
   font-size: 1rem;
 }
 
+/* Site header (contains nav) */
+.site-header {
+  display: flex;
+  flex-direction: column;
+}
+
 nav {
+  flex: 1;
   display: flex;
   flex-direction: column;
   text-align: center;
-  line-height: 34px;
-  font-size: 1.75em;
   justify-content: center;
   /* All children */
-  /* Title header */
   /* Spacer */
   /* Navigation anchors */
 }
 nav * {
   display: inline-block;
-  margin: 0.3em;
   white-space: nowrap;
-}
-nav h1 {
-  font-size: 4em;
-  margin-left: 0;
-  text-shadow: 0px 0px 2px white;
 }
 nav div {
   flex: 5;
   flex-shrink: 2;
 }
 nav a {
-  font-size: 2em;
-  padding: 4px 0;
-  background-color: hsl(240, 85%, 2%);
+  background-color: hsl(240, 55%, 8%);
+  font-size: 1.75em;
+  margin: 2px 0;
+  padding: 6px 0;
   color: white;
   flex: 2;
   text-decoration: none;
   font-weight: 500;
   text-align: center;
   text-decoration-line: none;
-}
-nav a .current {
-  text-decoration: underline;
+  height: 1em;
 }
 
 .wrapper-main {
@@ -110,6 +107,17 @@ body {
   h1 {
     font-size: 2em;
   }
+  /* Site header (contains nav) */
+  .site-header {
+    flex-direction: row;
+  }
+  /* Title header */
+  .title {
+    font-size: 3.6em;
+    line-height: 1.5em;
+    text-shadow: 0px 0px 2px white;
+    flex: 6;
+  }
   .wrapper-main {
     padding: 0;
     width: 75vw;
@@ -119,17 +127,22 @@ body {
   nav {
     flex-direction: row;
   }
+  nav * {
+    margin: 0.3em;
+  }
   nav h1 {
-    font-size: 1.5em;
+    font-size: 2.5em;
     text-align: center;
     margin: 4px 0 0 0;
   }
   nav a {
-    font-size: 1.5em;
+    font-size: 1.75em;
     transition: background-color 0.125s ease-out;
-    padding: 0.2em 0 0 0;
-    margin: 0;
+    line-height: 1em;
+    margin: 0 2px;
     flex-shrink: 0;
+    background-color: hsla(240, 57%, 8%, 0);
+    padding: 0.35em 1em;
   }
   nav a:hover {
     background-color: hsl(240, 55%, 8%);

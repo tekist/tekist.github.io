@@ -4,4 +4,4 @@ layout: default
 title: Welcome
 ---
 
-Hello, I'm Garrett
+Hello! My name's Garrett.
