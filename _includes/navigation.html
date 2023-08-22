@@ -1,7 +1,6 @@
-<div class="banner-wrapper">
-  <img class="banner" src="/assets/images/pixelate_lite.jpg" decode="async">
-</div>
 <nav>
+  <h1>{{ page.title }}</h1>
+  <div></div>
   {% for item in site.data.navigation %}
     <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
   {% endfor %}

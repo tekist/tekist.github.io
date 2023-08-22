@@ -7,9 +7,16 @@
     <link rel="shortcut icon" href="{{ "/favicon.ico" | prepend: site.baseurl | prepend: site.url }}" />
   </head>
   <body>
-    {% include site_header.html %}
-    <main>
-      {{ content }}
-    </main>
+    {% include banner.html %}
+    <div class="wrapper-main">
+      <hr>
+      {% include navigation.html %}
+      <hr>
+      <main>
+          {{ content }}
+      </main>
+      <hr class="break-end">
+      {% include footer.html %}
+    </div>
   </body>
 </html>

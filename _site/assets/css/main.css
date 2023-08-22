@@ -1,39 +1,156 @@
-body {
-  background: #0d0d13;
-  color: #000000;
-  font-family: -apple-system, BlinkMacSystemFont, "Verdana", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  animation: gradient 15s ease infinite;
-  height: 100vh;
-  margin: 0;
+html {
+  font-size: 1em;
 }
 
 h1 {
   color: white;
-  font-size: 250%;
+  font-size: 48px;
   font-weight: 400;
-  transition: all 0.175s ease-out;
+  transition: text-shadow 0.175s ease-out, color 0.175s ease-out;
   text-shadow: 0px 0px 0px white;
-}
-h1:hover {
-  text-shadow: 0px 0px 4px white;
+  margin: auto;
 }
 
 p {
   color: white;
 }
 
+nav {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  line-height: 34px;
+  font-size: 1.75em;
+  justify-content: center;
+  /* All children */
+  /* Title header */
+  /* Spacer */
+  /* Navigation anchors */
+}
+nav * {
+  display: inline-block;
+  margin: 0.3em;
+  white-space: nowrap;
+}
+nav h1 {
+  margin-left: 0;
+  width: 15vw;
+  text-align: left;
+  text-shadow: 0px 0px 2px white;
+}
+nav div {
+  flex: 5;
+  flex-shrink: 2;
+}
+nav a {
+  border: 1px solid white;
+  color: white;
+  flex: 3;
+  padding-top: 0.115em;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 0px 0px 2px white;
+  box-shadow: 0px 0px 0px white;
+  transition: box-shadow 0.16s ease-out, color 0.15s ease-out, background-color 0.16s ease-out;
+  text-decoration-line: none;
+}
+nav a:hover {
+  text-shadow: 0px 0px 2px #0b0b13;
+  box-shadow: 0px 0px 4px white;
+  color: #0b0b13;
+  background-color: white;
+}
+nav a .current {
+  text-decoration: underline;
+}
+
+.wrapper-main {
+  min-width: 540px;
+  width: 66vw;
+  margin: auto;
+}
+
 main {
-  margin-left: 16px;
+  margin: 0 0.5em 0 0.5em;
+}
+main p {
+  /* Currently just the profile picture */
+}
+main p img {
+  float: left;
+  padding: 0 0.85em;
+  margin: auto;
+}
+
+.break-end {
+  clear: both;
+}
+
+body {
+  background: #0b0b13;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Verdana", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  height: 100vh;
+  margin: 0;
+}
+
+.wrapper-banner {
+  width: 100%;
+  height: 33vh;
 }
 
 .banner {
   position: static;
   left: 0;
   top: 0;
-  width: max(100%, 960px);
-  height: 357px;
+  width: 100%;
+  height: 33vh;
   object-fit: cover;
-  mask-image: linear-gradient(rgb(0, 0, 0), transparent);
+  mask-image: linear-gradient(rgb(0, 0, 0) 30%, transparent);
+}
+
+/* Font-size for medium screens */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 1.75em;
+  }
+  p {
+    font-size: 1em;
+  }
+  .wrapper-main {
+    width: 100vw;
+    padding: 0;
+  }
+}
+/* Font-size for small screens */
+@media (max-width: 800px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  p {
+    font-size: 1em;
+  }
+  .wrapper-main {
+    width: 100vw;
+    padding: 0;
+  }
+}
+/* Font-size for smaller screens */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.35em;
+  }
+  p {
+    font-size: 1em;
+  }
+  .wrapper-main {
+    width: 100vw;
+    padding: 0;
+  }
+  nav {
+    flex-direction: column;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
