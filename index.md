@@ -1,7 +1,7 @@
 ---
 my_string: hello there
 layout: default
-title: Garrett Haynes
+title: Welcome
 ---
 
 Hello, I'm Garrett
