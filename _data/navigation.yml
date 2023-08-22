@@ -1,4 +1,4 @@
 - name: Home
   link: /
-- name: My Work
-  link: /my-work
+- name: About Me
+  link: /about
