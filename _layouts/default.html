@@ -14,16 +14,16 @@
         {% include navigation.html %}
         <main>
           {{ content }}
-          <ul class="gallery-container">
+          <div class="gallery-grid">
             {% for post in site.posts %}
-            <li class="gallery-item" >
+            <div class="gallery-item" >
               <a href="{{ post.url }}">
                 <p class="gallery-text">{{ post.title }}</p>
                 <img class="gallery-thumbnail" src="{{ post.image }}">
               </a>
-            </li>
+            </div>
             {% endfor %}
-          </ul>
+          </div>
         </main>
         {% include footer.html %}
       </div>
