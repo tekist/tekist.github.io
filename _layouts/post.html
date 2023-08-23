@@ -9,12 +9,14 @@
   </head>
   <body>
     {% include banner.html %}
-    <div class="wrapper-main">
-      {% include navigation.html %}
-      <main>
-        {{ content }}
-      </main>
-      {% include footer.html %}
+    <div class="wrapper-page">
+      <div class="wrapper-inner-page">
+        {% include navigation.html %}
+        <main>
+          {{ content }}
+        </main>
+        {% include footer.html %}
+      </div>
     </div>
   </body>
 </html>

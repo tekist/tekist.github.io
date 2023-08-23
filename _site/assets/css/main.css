@@ -1,5 +1,5 @@
 :root {
-  font-size: calc(1vw + 1em);
+  font-size: 1.25em;
 }
 
 h1 {
@@ -38,7 +38,8 @@ li {
 
 /* Page title (top left) */
 .title {
-  font-size: 3em;
+  font-size: 2em;
+  padding: 0.2em 0;
 }
 
 nav {
@@ -61,7 +62,7 @@ nav div {
 }
 nav a {
   background-color: hsl(240, 55%, 12%);
-  font-size: 2em;
+  font-size: 1.5em;
   margin: 2px 0;
   padding: 6px 0;
   color: white;
@@ -72,10 +73,19 @@ nav a {
   text-decoration-line: none;
   height: 1em;
 }
+nav .current {
+  text-shadow: 0 0 2px white;
+  text-decoration-line: underline;
+}
 
-.wrapper-main {
+.wrapper-page {
+  margin: 0;
+  background-color: hsl(240, 85%, 2%);
+}
+
+.wrapper-inner-page {
   max-width: 1024px;
-  margin: 0.5em auto 0 auto;
+  margin: 0 auto;
 }
 
 main {
@@ -86,23 +96,24 @@ body {
   background: hsl(240, 85%, 2%);
   color: #000000;
   font-family: -apple-system, BlinkMacSystemFont, "Verdana", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  height: 100vh;
   margin: 0;
 }
 
-.wrapper-banner {
+.banner-gradient {
   width: 100%;
   height: 33vh;
+  background: linear-gradient(hsla(240, 80%, 2%, 0) 25%, hsl(240, 85%, 2%));
+  z-index: 1;
 }
 
-.banner {
-  position: static;
+.banner-image {
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 33vh;
   object-fit: cover;
-  mask-image: linear-gradient(rgb(0, 0, 0) 20%, transparent);
+  z-index: -1;
 }
 
 .gallery-container {
@@ -123,10 +134,11 @@ body {
   margin: auto;
   width: calc(100vw - 2em);
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.6862745098);
+  background-color: rgba(0, 0, 0, 0.7058823529);
   font-size: 1.25em;
   padding: 4px 0;
   border-radius: 24px 24px 0 0;
+  backdrop-filter: blur(8px);
   z-index: 1;
 }
 
@@ -152,12 +164,9 @@ body {
   }
 }
 /* Font-size for medium screens */
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1024px) {
   :root {
-    font-size: 1em;
-  }
-  h1 {
-    font-size: 2em;
+    font-size: 1.125em;
   }
   /* Site header (contains nav) */
   .site-header {
@@ -165,16 +174,14 @@ body {
   }
   /* Title header */
   .title {
-    font-size: 3em;
+    font-size: 2.5em;
     line-height: 1.5em;
-    text-shadow: 0px 0px 2px white;
+    text-shadow: 0px 0px 4px white;
     flex: 6;
   }
-  .wrapper-main {
+  .wrapper-inner-page {
     padding: 0;
     width: 65vw;
-    margin: auto;
-    width: 100%;
   }
   main {
     margin: 1em auto;
@@ -199,12 +206,11 @@ body {
     margin: 0.3em;
   }
   nav h1 {
-    font-size: 2.5em;
     text-align: center;
     margin: 4px 0 0 0;
   }
   nav a {
-    font-size: 1.75em;
+    font-size: 1.5em;
     transition: background-color 0.125s ease-out;
     line-height: 1em;
     margin: 0 2px;
@@ -218,8 +224,8 @@ body {
 }
 /* Font-size for medium screens */
 @media screen and (min-width: 576px) {
-  nav h1 {
-    font-size: 2.5em;
+  .title {
+    font-size: 3em;
   }
   nav a {
     font-size: 2em;
