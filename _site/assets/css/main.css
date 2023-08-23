@@ -1,5 +1,5 @@
 :root {
-  font-size: 1em;
+  font-size: calc(1vw + 1em);
 }
 
 h1 {
@@ -36,8 +36,9 @@ li {
   flex-direction: column;
 }
 
+/* Page title (top left) */
 .title {
-  font-size: 3.5em;
+  font-size: 3em;
 }
 
 nav {
@@ -47,16 +48,12 @@ nav {
   text-align: center;
   justify-content: center;
   /* All children */
-  /* font-size: */
   /* Spacer */
   /* Navigation anchors */
 }
 nav * {
   display: inline-block;
   white-space: nowrap;
-}
-nav h1 {
-  font-size: 2.25em;
 }
 nav div {
   flex: 5;
@@ -156,6 +153,9 @@ body {
 }
 /* Font-size for medium screens */
 @media screen and (min-width: 1080px) {
+  :root {
+    font-size: 1em;
+  }
   h1 {
     font-size: 2em;
   }

@@ -7,7 +7,7 @@ $thumbnailSize: 320px;
 $mobileThumbSize: calc(100vw - 2em);
 
 :root {
-  font-size: 1em;
+  font-size: calc(1vw + 1em);
 }
 
 h1{
@@ -44,8 +44,9 @@ li{
   flex-direction: column;
 }
 
+/* Page title (top left) */
 .title{
-  font-size: 3.5em;
+  font-size: 3em;
 }
 
 nav{
@@ -59,10 +60,6 @@ nav{
   * {
     display: inline-block;
     white-space: nowrap;
-  }
-  /* font-size: */
-  h1{
-    font-size: 2.25em;
   }
   /* Spacer */
   div{
@@ -169,6 +166,10 @@ body {
 /* Font-size for medium screens */
 // Breakpoint for horizontal nav
 @media screen and (min-width: 1080px){
+  :root {
+    font-size: 1em;
+  }
+
   h1{
     font-size: 2em;
   }
