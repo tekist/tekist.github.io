@@ -4,6 +4,7 @@ $backgroundColor: hsl(240, 85%, 2%);
 $bodyColor: #000000;
 $bodyFont: -apple-system,BlinkMacSystemFont,"Verdana",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 $thumbnailSize: 320px;
+$mobileThumbSize: calc(100vw - 2em);
 
 :root {
   font-size: 1em;
@@ -19,6 +20,10 @@ h1{
 
 p {
   color: white;
+}
+
+main img{
+  max-width: calc(100vw - 3em);
 }
 
 ul{
@@ -55,7 +60,10 @@ nav{
     display: inline-block;
     white-space: nowrap;
   }
-
+  /* font-size: */
+  h1{
+    font-size: 2.25em;
+  }
   /* Spacer */
   div{
     flex: 5;
@@ -63,7 +71,7 @@ nav{
   }
   /* Navigation anchors */
   a{
-    background-color: hsl(240, 55%, 8%);
+    background-color: hsl(240, 55%, 12%);
     font-size: 2em;
     margin: 2px 0;
     padding: 6px 0;
@@ -78,13 +86,12 @@ nav{
 }
 
 .wrapper-main{
-  width: 100vw;
   max-width: 1024px;
   margin: .5em auto 0 auto;
 }
 
 main{
-  margin: 0 1em;
+  margin: 1em;
 }
 
 body {
@@ -113,12 +120,12 @@ body {
 .gallery-container{
   display: flex;
   flex-wrap: wrap;
-  max-width: calc(640px + 2em);
+  max-width: $mobileThumbSize;
 }
 
 .gallery-item{
   border-radius: 24px;
-  width: $thumbnailSize;
+  width: $mobileThumbSize;
   overflow: hidden; 
   margin: 1em auto;
 }
@@ -126,7 +133,7 @@ body {
 .gallery-text{
   position: absolute;
   margin: auto;
-  width: $thumbnailSize;
+  width: $mobileThumbSize;
   text-align: center;
   background-color: #000000af;
   font-size: 1.25em;
@@ -136,8 +143,8 @@ body {
 }
 
 .gallery-thumbnail{
-  width: $thumbnailSize;
-  height: $thumbnailSize;
+  width: $mobileThumbSize;
+  height: $mobileThumbSize;
   border-radius: 24px;
   object-fit: cover;
   scale: 1;
@@ -161,7 +168,7 @@ body {
 
 /* Font-size for medium screens */
 // Breakpoint for horizontal nav
-@media screen and (min-width: 992px){
+@media screen and (min-width: 1080px){
   h1{
     font-size: 2em;
   }
@@ -186,8 +193,25 @@ body {
     width: 100%;
   }
 
-  .gallery-thumbnail:hover{
-    scale: 1.1;
+  main{
+    margin: 1em auto;
+  }
+
+  .gallery-text, .gallery-item{
+    width: $thumbnailSize;
+  }
+
+  .gallery-item{
+    margin: 1em;
+  }
+
+  .gallery-thumbnail{
+    width: $thumbnailSize;
+    height: $thumbnailSize;
+
+    &:hover{
+      scale: 1.1;
+    }
   }
 
   nav{
@@ -207,11 +231,11 @@ body {
       line-height: 1em;
       margin: 0 2px;
       flex-shrink: 0;
-      background-color: hsla(240, 57%, 8%, 0);
+      background-color: hsla(240, 55%, 12%, 0);
       padding: .35em 1em;
 
       &:hover{
-        background-color: hsl(240, 55%, 8%);
+        background-color: hsl(240, 55%, 12%);
       }
     }
   }
@@ -222,10 +246,10 @@ body {
 @media screen and (min-width: 576px){
   nav{
       h1{
-        font-size: 1.75em;
+        font-size: 2.5em;
       }
       a{
-        font-size: 1.5em;
+        font-size: 2em;
       }
   }
 }
