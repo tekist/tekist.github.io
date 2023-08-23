@@ -5,8 +5,6 @@
 h1 {
   color: white;
   font-weight: 400;
-  transition: text-shadow 0.175s ease-out, color 0.175s ease-out;
-  text-shadow: 0px 0px 0px white;
   margin: auto;
 }
 
@@ -15,7 +13,7 @@ p {
 }
 
 main img {
-  max-width: calc(100vw - 3em);
+  max-width: calc(100vw - 60px);
 }
 
 ul {
@@ -33,13 +31,14 @@ li {
 /* Site header (contains nav) */
 .site-header {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 /* Page title (top left) */
 .title {
   font-size: 2em;
   padding: 0.2em 0;
+  text-shadow: 0px 0px 4px white;
 }
 
 nav {
@@ -74,7 +73,6 @@ nav a {
   height: 1em;
 }
 nav .current {
-  text-shadow: 0 0 2px white;
   text-decoration-line: underline;
 }
 
@@ -119,12 +117,11 @@ body {
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
-  max-width: calc(100vw - 2em);
+  max-width: calc(100vw - 40px);
 }
 
 .gallery-item {
   border-radius: 24px;
-  width: calc(100vw - 2em);
   overflow: hidden;
   margin: 1em auto;
 }
@@ -132,23 +129,27 @@ body {
 .gallery-text {
   position: absolute;
   margin: auto;
-  width: calc(100vw - 2em);
+  width: calc(100vw - 60px);
   text-align: center;
   background-color: rgba(0, 0, 0, 0.7058823529);
-  font-size: 1.25em;
+  font-size: 1em;
   padding: 4px 0;
   border-radius: 24px 24px 0 0;
-  backdrop-filter: blur(8px);
   z-index: 1;
 }
 
 .gallery-thumbnail {
-  width: calc(100vw - 2em);
-  height: calc(100vw - 2em);
+  width: calc(100vw - 40px);
+  height: calc(100vw - 40px);
   border-radius: 24px;
   object-fit: cover;
   scale: 1;
   transition: scale 0.3s ease-in-out;
+}
+
+.footer-text {
+  width: fit-content;
+  margin: auto;
 }
 
 /* Font-size for desktop screens */
@@ -174,10 +175,9 @@ body {
   }
   /* Title header */
   .title {
-    font-size: 2.5em;
     line-height: 1.5em;
-    text-shadow: 0px 0px 4px white;
     flex: 6;
+    padding: 0;
   }
   .wrapper-inner-page {
     padding: 0;
@@ -190,7 +190,7 @@ body {
     width: 320px;
   }
   .gallery-item {
-    margin: 1em;
+    margin: 0.3em;
   }
   .gallery-thumbnail {
     width: 320px;
@@ -216,7 +216,7 @@ body {
     margin: 0 2px;
     flex-shrink: 0;
     background-color: hsla(240, 55%, 12%, 0);
-    padding: 0.35em 1em;
+    padding: 0.2em 0.5em;
   }
   nav a:hover {
     background-color: hsl(240, 55%, 12%);
@@ -226,6 +226,9 @@ body {
 @media screen and (min-width: 576px) {
   .title {
     font-size: 3em;
+  }
+  .gallery-text {
+    font-size: 1.2em;
   }
   nav a {
     font-size: 2em;
