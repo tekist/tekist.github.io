@@ -1,14 +1,22 @@
 $backgroundColor: hsl(240, 85%, 2%);
 //hsl(48, 15%, 87%);
 //hsl(240, 85%, 2%);
-$bodyColor: #000000;
+$bodyColor: #fff;
 $bodyFont: -apple-system,BlinkMacSystemFont,"Verdana",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 $thumbnailSize: 320px;
-$mobileThumbSize: calc(100vw - 40px);
+
+/* Em scaling variables */
+// 1em is = 16px
+$rootEmSize: 1;
+$rootEmSizePx: calc(16 * $rootEmSize);
+//$mobileThumbSize: calc(100vw - 32px);
 
 :root {
-  // equivalent to 20px (20/16)
-  font-size: 1.25em;
+  font-size: #{$rootEmSize}em;
+
+  --thumbnail-small: calc(100vw - 32px);
+  --thumbnail-medium: 396px;
+  --thumbnail-large: 500px;
 }
 
 h1{
@@ -22,7 +30,9 @@ p {
 }
 
 main img{
-  max-width: calc(100vw - 60px);
+  max-width: 100%;
+  display: block;
+  margin: auto;
 }
 
 ul{
@@ -45,7 +55,7 @@ li{
 
 /* Page title (top left) */
 .title{
-  font-size: 2em;
+  font-size: 1.75em;
   padding: .2em 0;
   text-shadow: 0px 0px 4px white;
 }
@@ -59,7 +69,6 @@ nav{
 
   /* All children */
   * {
-    display: inline-block;
     white-space: nowrap;
   }
   /* Spacer */
@@ -69,8 +78,8 @@ nav{
   }
   /* Navigation anchors */
   a{
-    background-color: hsl(240, 55%, 12%);
-    font-size: 1.5em;
+    background-color: hsl(240, 32%, 15%);
+    font-size: 1.25em;
     margin: 2px 0;
     padding: 6px 0;
     color: white;
@@ -87,13 +96,14 @@ nav{
 }
 
 .wrapper-page{
-  margin: 0;
+  margin: 33vh 0 0 0;
   background-color: $backgroundColor;
 }
 
 .wrapper-inner-page{
-  max-width: 1024px;
+  max-width: 1050px;
   margin: 0 auto;
+  overflow: visible;
 }
 
 main{
@@ -105,18 +115,22 @@ body {
   color: $bodyColor;
   font-family: $bodyFont;
   margin: 0;
+  padding: 0;
 }
 
 .banner-gradient{
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 33vh;
   background: linear-gradient(hsla(240, 80%, 2%, 0) 25%, $backgroundColor);
-  z-index: 1;
 }
 
 .banner-image{
   position: fixed;
   left: 0;
+  right: 0;
   top: 0;
   width: 100%;
   height: 33vh;
@@ -127,7 +141,8 @@ body {
 .gallery-container{
   display: flex;
   flex-wrap: wrap;
-  max-width: $mobileThumbSize;
+  max-width: var(--thumbnail-small);
+  justify-content: center;
 }
 
 .gallery-item{
@@ -141,7 +156,7 @@ body {
   margin: auto;
   width: calc(100vw - 60px);
   text-align: center;
-  background-color: #000000b4;
+  background-color: rgba(0, 0, 0, 0.85);
   font-size: 1em;
   padding: 4px 0;
   border-radius: 24px 24px 0 0;
@@ -149,35 +164,41 @@ body {
 }
 
 .gallery-thumbnail{
-  width: $mobileThumbSize;
-  height: $mobileThumbSize;
+  width: var(--thumbnail-small);
+  height: var(--thumbnail-small);
   border-radius: 24px;
   object-fit: cover;
   scale: 1;
   transition: scale .3s ease-in-out;
 }
 
-.footer-text{
+footer{
   width: fit-content;
-  margin: auto;
+  margin: 0 auto 1em auto;
 }
 
-/* Font-size for desktop screens */
-@media screen and (min-width:1280px){
-  h1{
-    font-size: 1.25em;
+/* Largest desktop screens */
+@media screen and (min-width: 1600px){
+  .gallery-text, .gallery-item, .gallery-text, .gallery-thumbnail{
+    width: var(--thumbnail-large);
   }
-  nav{
-    h1{
-      font-size: 1.25em;
-    }
-    a{
-      font-size: 1.25em;
-    }
+
+  .gallery-thumbnail{
+    height: var(--thumbnail-large);
   }
 }
 
-/* Font-size for medium screens */
+@media screen and (min-width: 1024px) and (max-width: 1600px){
+  .gallery-text, .gallery-item, .gallery-text, .gallery-thumbnail{
+    width: $thumbnailSize;
+  }
+
+  .gallery-thumbnail{
+    height: $thumbnailSize;
+  }
+}
+
+/* Font-size for medium screens and larger */
 // Breakpoint for horizontal nav
 @media screen and (min-width: 1024px){
   :root {
@@ -199,28 +220,19 @@ body {
 
   .wrapper-inner-page{
     padding: 0;
-    width: 65vw;
+    width: 64vw;
   }
 
   main{
     margin: 1em auto;
   }
 
-  .gallery-text, .gallery-item{
-    width: $thumbnailSize;
-  }
-
   .gallery-item{
     margin: .3em;
   }
 
-  .gallery-thumbnail{
-    width: $thumbnailSize;
-    height: $thumbnailSize;
-
-    &:hover{
-      scale: 1.1;
-    }
+  .gallery-thumbnail:hover{
+    scale: 1.1;
   }
 
   nav{
@@ -239,11 +251,11 @@ body {
       line-height: 1em;
       margin: 0 2px;
       flex-shrink: 0;
-      background-color: hsla(240, 55%, 12%, 0);
-      padding: 0.2em .5em;
+      background-color: hsla(240, 32%, 15%, 0);
+      padding: 0.4em 0.8em;
 
       &:hover{
-        background-color: hsl(240, 55%, 12%);
+        background-color: hsl(240, 32%, 15%);
       }
     }
   }
@@ -253,7 +265,7 @@ body {
 // Breakpoint for horizontal nav
 @media screen and (min-width: 576px){
   .title{
-    font-size: 3em;
+    font-size: 2.5em;
   }
 
   .gallery-text{
@@ -262,7 +274,7 @@ body {
 
   nav{
       a{
-        font-size: 2em;
+        font-size: 1.5em;
       }
   }
 }
