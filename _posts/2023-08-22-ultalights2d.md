@@ -10,7 +10,7 @@ image5: /assets/images/lights4.jpg
 image6: /assets/images/lights5.jpg
 ---
 
-<figure><img src="{{ page.image | relative_url }}" alt="Screenshot of Ultra Lights 2D"><figcaption>Screenshot of <em>Ultra Lights 2D</em></figcaption></figure>
+<figure><img src="{{ page.image | relative_url }}" alt="Screenshot of Ultra Lights 2D" loading="lazy"><figcaption>Screenshot of <em>Ultra Lights 2D</em></figcaption></figure>
 
 ### Overview 
 
@@ -22,13 +22,13 @@ The shadow system is based off of [Slembcke's lighting system](https://slembcke.
 
 <br/>
 
-<figure class="less-width"><img src="{{ page.image1 | relative_url }}" alt="Shadow geometry"><figcaption>Shadow geometry</figcaption></figure>
+<figure class="less-width"><img src="{{ page.image1 | relative_url }}" alt="Shadow geometry" loading="lazy"><figcaption>Shadow geometry</figcaption></figure>
 
 To project shadows, an index of static geometry is pulled into memory. A vertex shader then projects new points from this, extruding them away from a light source out to infinity via homogenous coordinates. The image above was created with [RenderDoc,](https://renderdoc.org/) a program which allows for detailed graphics debugging.
 
 <br/>
 
-<figure class="less-width"><img src="{{ page.image2 | relative_url }}" alt="Infographic that demonstrates color banding and dithering"><figcaption>This image exaggerates how dithering can resolve color banding</figcaption></figure>
+<figure class="less-width"><img src="{{ page.image2 | relative_url }}" alt="Infographic that demonstrates color banding and dithering" loading="lazy"><figcaption>This image exaggerates how dithering can resolve color banding</figcaption></figure>
 
 One of the downsides of the shadow system is that they have to be drawn in 8-bit textures. This creates a percieved lack of detail dubbed "color banding". Thankfully, blue noise is a great solution to this issue. The image above shows the effect it can have on an obsolete version of the engine.
 
@@ -36,7 +36,6 @@ One of the downsides of the shadow system is that they have to be drawn in 8-bit
 
 ### Gallery
 
-<img src="{{ page.image3 | relative_url }}" alt="Screenshot of Ultra Lights 2D">
-<img src="{{ page.image4 | relative_url }}" alt="Screenshot of Ultra Lights 2D">
-<img src="{{ page.image5 | relative_url }}" alt="Screenshot of Ultra Lights 2D">
-<img src="{{ page.image6 | relative_url }}" alt="Screenshot of Ultra Lights 2D">
+<img src="{{ page.image3 | relative_url }}" alt="Screenshot of Ultra Lights 2D" loading="lazy">
+<img src="{{ page.image4 | relative_url }}" alt="Screenshot of Ultra Lights 2D" loading="lazy">
+<img src="{{ page.image5 | relative_url }}" alt="Screenshot of Ultra Lights 2D" loading="lazy">
