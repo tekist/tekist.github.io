@@ -26,15 +26,36 @@
         <small>Posted 8-22-2023</small>
         
         <main>
-          <figure><img src="/assets/images/lights.jpg" /><figcaption>Screenshot of <em>Ultra Lights 2D</em></figcaption></figure>
+          <figure><img src="/assets/images/lights1.jpg" alt="Screenshot of Ultra Lights 2D" /><figcaption>Screenshot of <em>Ultra Lights 2D</em></figcaption></figure>
 
 <h3 id="overview">Overview</h3>
 
-<p>This is a 2D fully dynamic real-time lighting engine I built that’s capable of rendering shadows with penumbra and antumbra. Colors are mixed together in high dynamic range, and the results are tone mapped via an <a href="https://knarkowicz.wordpress.com/2016/01/06/aces-filmic-tone-mapping-curve/">ACES filmic tonemapping curve</a>. The result is a colorful and suprisingly accurate light and shadow renderer. The best part is that it’s <em>very</em> fast. The scene above runs at thousands of frames per second on my machine, and it’s targeted to support typical consumer-grade laptops.</p>
+<p>This is a 2D fully dynamic real-time lighting engine I built that’s capable of rendering shadows with penumbra and antumbra. Colors are mixed together in high dynamic range, and the results are tone mapped via an <a href="https://knarkowicz.wordpress.com/2016/01/06/aces-filmic-tone-mapping-curve/">ACES filmic tonemapping curve</a>. The result is a colorful and suprisingly accurate light and shadow renderer. The best part is that it’s <em>very</em> fast. The scene above runs at thousands of frames per second on my machine, and it’s targeted to support typical consumer-grade laptops. All of this took well over a year of development (2022-2023), and I’d like to refine it even further for potential commercial use.</p>
 
 <h3 id="details">Details</h3>
 
-<p>The shadow system is based off of <a href="https://slembcke.github.io/SuperFastSoftShadows">Slembcke’s lighting system</a>. I reverse-engineered his WebGL implementation for use in Game Maker: Studio 2, which is my preferred game engine. Most of this could theoretically be ported back into WebGL. I fixed an issue his version has with shadow geometry clipping, added <a href="https://momentsingraphics.de/BlueNoise.html">blue noise dithering</a> for smoother gradients, and HDR colors and tone mapping. All of this took well over a year of development (2022-2023), and I’d like to refine it even further for potential commercial use.</p>
+<p>The shadow system is based off of <a href="https://slembcke.github.io/SuperFastSoftShadows">Slembcke’s lighting system</a>. I reverse-engineered his WebGL implementation for use in Game Maker: Studio 2, which is my preferred game engine. Most of this could theoretically be ported back into WebGL. I fixed an issue his version has with shadow geometry clipping, added <a href="https://momentsingraphics.de/BlueNoise.html">blue noise dithering</a> for smoother gradients, and HDR colors and tone mapping.</p>
+
+<p><br /></p>
+
+<figure class="less-width"><img src="/assets/images/lightmesh.jpg" alt="Shadow geometry" /><figcaption>Shadow geometry</figcaption></figure>
+
+<p>To project shadows, an index of static geometry is pulled into memory. A vertex shader then projects new points from this, extruding them away from a light source out to infinity via homogenous coordinates. The image above was created with <a href="https://renderdoc.org/">RenderDoc,</a> a program which allows for detailed graphics debugging.</p>
+
+<p><br /></p>
+
+<figure class="less-width"><img src="/assets/images/dithering.jpg" alt="Infographic that demonstrates color banding and dithering" /><figcaption>This image exaggerates how dithering can resolve color banding</figcaption></figure>
+
+<p>One of the downsides of the shadow system is that they have to be drawn in 8-bit textures. This creates a percieved lack of detail dubbed “color banding”. Thankfully, blue noise is a great solution to this issue. The image above shows the effect it can have on an obsolete version of the engine.</p>
+
+<p><br /></p>
+
+<h3 id="gallery">Gallery</h3>
+
+<p><img src="/assets/images/lights2.jpg" alt="Screenshot of Ultra Lights 2D" />
+<img src="/assets/images/lights3.jpg" alt="Screenshot of Ultra Lights 2D" />
+<img src="/assets/images/lights4.jpg" alt="Screenshot of Ultra Lights 2D" />
+<img src="/assets/images/lights5.jpg" alt="Screenshot of Ultra Lights 2D" /></p>
 
         </main>
         <footer>
