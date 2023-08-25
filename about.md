@@ -17,3 +17,5 @@ I'm constantly learning and building new and interesting things.
 
 If you're interested in working with me, consider reaching out to: 
 <a href='mailt&#111;&#58;&#101;mer%6&#55;e%2E&#105;n&#46;dev%4&#48;gmail%&#50;Ec%6Fm'>&#101;merge&#46;&#105;&#110;&#46;de&#118;&#64;&#103;ma&#105;&#108;&#46;com</a>
+
+<small>Note: This site is undergoing active development. Some posts may be empty and some functionality may be missing.</small>
