@@ -2,6 +2,7 @@
 layout: post
 title:  "2D Lighting Engine"
 image: /assets/images/lights.jpg
+altText: Screenshot of Ultra Lights 2D
 image0: /assets/images/lights1.jpg
 image1: /assets/images/lightmesh.jpg
 image2: /assets/images/dithering.jpg
