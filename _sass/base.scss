@@ -14,14 +14,13 @@ $rootEmSizePx: calc(16 * $rootEmSize);
 :root {
   font-size: #{$rootEmSize}em;
 
-  --thumbnail-small: calc(100vw - 32px);
+  --thumbnail-small: calc(100% - 32px);
   --thumbnail-medium: 396px;
   --thumbnail-large: 500px;
 }
 
 h1{
   color: white;
-  font-weight: 400;
   margin: auto;
 }
 
@@ -76,6 +75,7 @@ figcaption {
   font-size: 1.75em;
   padding: .2em 0;
   text-shadow: 0px 0px 4px white;
+  font-weight: 400;
 }
 
 nav{
