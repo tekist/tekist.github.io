@@ -162,7 +162,6 @@ body {
   font-size: 1.25em;
   padding: .1em .8em;
   z-index: 1;
-  backdrop-filter: blur(2px);
 }
 
 .gallery-grid{
@@ -243,6 +242,10 @@ footer{
 
   .gallery-item{
     margin: 0;
+  }
+
+  .gallery-text{
+    backdrop-filter: blur(3px);
   }
 
   .gallery-thumbnail{
