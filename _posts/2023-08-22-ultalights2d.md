@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  "2D Lighting Engine"
-image: /assets/images/lights1.jpg
+image: /assets/images/lights.jpg
+image0: /assets/images/lights1.jpg
 image1: /assets/images/lightmesh.jpg
 image2: /assets/images/dithering.jpg
 image3: /assets/images/lights2.jpg
@@ -10,7 +11,7 @@ image5: /assets/images/lights4.jpg
 image6: /assets/images/lights5.jpg
 ---
 
-<figure><img src="{{ page.image | relative_url }}" alt="Screenshot of Ultra Lights 2D" loading="lazy"><figcaption>Screenshot of <em>Ultra Lights 2D</em></figcaption></figure>
+<figure><img src="{{ page.image0 | relative_url }}" alt="Screenshot of Ultra Lights 2D" loading="lazy"><figcaption>Screenshot of <em>Ultra Lights 2D</em></figcaption></figure>
 
 ### Overview 
 
