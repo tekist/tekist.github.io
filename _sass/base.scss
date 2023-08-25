@@ -98,6 +98,7 @@ nav{
   max-width: 1050px;
   margin: 0 auto;
   overflow: visible;
+  overflow-anchor: none;
 }
 
 main{
@@ -238,6 +239,10 @@ footer{
 
   main{
     margin: 1em auto;
+
+    .less-width{
+      width: 75%;
+    }
   }
 
   .gallery-item{
