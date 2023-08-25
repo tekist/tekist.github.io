@@ -1,18 +1,17 @@
 ---
 layout: post
 title:  "2D Lighting Engine"
-image: /assets/images/lights.jpg
+image: /assets/images/lights.webp
 altText: Screenshot of Ultra Lights 2D
-image0: /assets/images/lights1.jpg
-image1: /assets/images/lightmesh.jpg
-image2: /assets/images/dithering.jpg
-image3: /assets/images/lights2.jpg
-image4: /assets/images/lights3.jpg
-image5: /assets/images/lights4.jpg
-image6: /assets/images/lights5.jpg
+image0: /assets/images/lights1.webp
+image1: /assets/images/lightmesh.webp
+image2: /assets/images/dithering.webp
+image3: /assets/images/lights2.webp
+image4: /assets/images/lights3.webp
+image5: /assets/images/lights4.webp
 ---
 
-<figure><img src="{{ page.image0 | relative_url }}" alt="Screenshot of Ultra Lights 2D" loading="lazy"><figcaption>Screenshot of <em>Ultra Lights 2D</em></figcaption></figure>
+<figure><img src="{{ page.image0 | relative_url }}" alt="Screenshot of Ultra Lights 2D"><figcaption>Screenshot of <em>Ultra Lights 2D</em></figcaption></figure>
 
 ### Overview 
 
