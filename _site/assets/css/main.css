@@ -1,4 +1,3 @@
-/* Em scaling variables */
 :root {
   font-size: 1em;
   --thumbnail-small: calc(100% - 32px);
@@ -17,19 +16,13 @@ h2 {
 
 p {
   color: white;
-  line-height: 1.3;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
 li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  line-height: 1.5em;
+  letter-spacing: 0.02em;
 }
 
 figure {
@@ -155,13 +148,12 @@ body {
 
 .gallery-text {
   position: absolute;
-  margin: 0;
-  width: 100%;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.7);
-  font-size: 1em;
-  padding: 4px 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  font-size: 1.25em;
+  padding: 0.1em 0.8em;
   z-index: 1;
+  backdrop-filter: blur(2px);
 }
 
 .gallery-grid {
@@ -208,7 +200,7 @@ footer {
 /* Font-size for medium screens and larger */
 @media screen and (min-width: 1024px) {
   :root {
-    font-size: 1.125em;
+    font-size: 1em;
   }
   /* Site header (contains nav) */
   .site-header {
@@ -294,7 +286,7 @@ footer {
     font-size: 2.5em;
   }
   .gallery-text {
-    font-size: 1.2em;
+    font-size: 1.25em;
   }
   nav a {
     font-size: 1.5em;
