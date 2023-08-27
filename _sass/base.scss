@@ -13,21 +13,22 @@ $thumbnailSize: 320px;
 h1{
   color: white;
   margin: auto;
-  margin: .75em 0 .5em;
+  margin: 0 0 1rem;
 }
 
 h1, h2{
   font-weight: 400;
 }
 
-h2, h3 {
-  margin: 1em 0 0 0;
+h2, h3{
+  margin: 0 0 1rem;
 }
 
-p {
+p{
   color: white;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  margin: 0 auto 1.75em auto;
 }
 
 li{
@@ -45,20 +46,25 @@ figcaption {
   text-align: center;
 }
 
-/* Site header (contains nav) */
-.site-header{
+/* Site header */
+header{
   display: flex;
   flex-direction: column-reverse;
 }
 
-/* Page title (top left) */
 .title{
-  font-size: 1.75em;
+  font-size: 1.5rem;
   padding: .2em 0;
   margin: 0;
   text-shadow: 0px 0px 4px white;
 }
 
+.current{
+  color: hsl(115, 100%, 50%);
+  text-shadow: 0 0 4px hsl(115, 100%, 50%);
+}
+
+/*|| Navigation */
 nav{
   flex: 1;
   display: flex;
@@ -78,7 +84,7 @@ nav{
   /* Navigation anchors */
   a{
     background-color: hsl(240, 38%, 10%);;
-    font-size: 1.25em;
+    font-size: 1.25rem;
     margin: 2px 0;
     padding: .4em 0;
     color: white;
@@ -89,9 +95,6 @@ nav{
     text-decoration-line: none;
     height: 1em;
   }
-  .current{
-    text-decoration-line: underline;
-  }
 }
 
 .wrapper-page{
@@ -100,14 +103,15 @@ nav{
 }
 
 .wrapper-inner-page{
-  max-width: 1050px;
+  max-width: 1024px;
   margin: 0 auto;
   overflow: visible;
   overflow-anchor: none;
 }
 
+/*|| Main */
 main{
-  margin: 0 1em;
+  margin: 0 1rem;
 
   img{
     width: 100%;
@@ -172,6 +176,7 @@ body {
   z-index: 1;
 }
 
+/*|| Gallery grid (mobile) */
 .gallery-grid{
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -219,16 +224,10 @@ footer{
   margin: 0 auto 1em auto;
 }
 
-/* Font-size for medium screens and larger */
-// Breakpoint for horizontal nav
+/*|| Font-size for medium screens and larger */
 @media screen and (min-width: 1024px){
-  :root {
-    // equivalent to 16px (16/16)
-    font-size: 1em;
-  }
-
   /* Site header (contains nav) */
-  .site-header{
+  header{
     flex-direction: row;
   }
 
@@ -307,15 +306,12 @@ footer{
   nav{
     flex-direction: row;
 
-    * {
-      margin: .3em;
-    }
     h1{
       text-align: center;
-      margin: 4px 0 0 0;
+      margin: 0 0 1rem 0;
     }
     a{
-      font-size: 1.5em;
+      font-size: 1.5rem;
       transition: background-color .125s ease-out;
       line-height: 1em;
       margin: 0 2px;
