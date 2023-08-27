@@ -8,11 +8,11 @@
     <link rel="shortcut icon" href="{{ "/favicon.ico" | prepend: site.baseurl | prepend: site.url }}" />
   </head>
   <body>
-    {% include banner.html %}
+    {% include banner-post.html %}
     <div class="wrapper-page">
       <div class="wrapper-inner-page">
         <main>
-          {% include navigation.html %}
+          {% include header.html %}
           {% if page.title != "About Me" %}
           <small>Posted {{ page.date | date: "%-m-%d-%Y" }}</small>
           {% endif %}

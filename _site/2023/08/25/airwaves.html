@@ -8,12 +8,12 @@
     <link rel="shortcut icon" href="http://localhost:4000/favicon.ico" />
   </head>
   <body>
-    <img class="banner-image" src="/assets/images/pixelator.png" decode="async" alt="Abstract background art">
+    <img class="banner-image" src="" decode="async" alt="Abstract CGI of clouds at sunset in the form of waves">
 <div class="banner-gradient"></div>
     <div class="wrapper-page">
       <div class="wrapper-inner-page">
         <main>
-          <div class="site-header">
+          <header>
   <h1 class="title">Art | Airwaves</h1>
   <nav>
     
@@ -22,19 +22,23 @@
       <a href="/about.html" >About Me</a>
     
   </nav>
-</div>
+</header>
           
           <small>Posted 8-25-2023</small>
           
           <p><img src="/assets/images/airwaves.webp" alt="Abstract CGI of clouds at sunset in the form of waves" /></p>
 
-<p>“Airwaves” was the result of toying with volume shaders in Blender for a week. A few noise maps of different sizes are added together, then combined with a sine wave in an exponent to create this shape. The noise retains the same detail regardless of the shape/size of the volume itself. Light can scatter through the volume 14 times per sample per pixel, and there are 6000 samples in total, meaning there are ~174 billion samples contained in this image. Post-processing was done via GIMP. I learned many things about shaders, volumes, and path-tracing while making this.</p>
+<p>“Airwaves” was the result of toying with volume shaders in Blender for a week. Artistically, I wanted to create something surreal. Something your eyes might accept, but your brain knows to be impossible.</p>
+
+<h2 id="technical-details">Technical Details</h2>
+
+<p><em>Generative noise</em> is nearly the perfect solution for <a href="https://en.wikipedia.org/wiki/Procedural_generation">procedurally generating</a> large volumes of clouds and smoke. It’s generated in the form of textures . The noise retains the same detail regardless of the shape/size of the volume itself. Light can scatter through the volume 14 times per sample per pixel, and there are 6000 samples in total, meaning there are ~174 billion samples contained in this image. Post-processing was done via GIMP. I learned many things about shaders, volumes, and path-tracing while making this.</p>
 
 <p>Rendering in graphics can be intensive. Volume rendering is particularly intensive. The total rendering time was about five and a half hours on an RTX 3080ti.</p>
 
-<p><br /></p>
+<h1 id="gallery">Gallery</h1>
 
-<p>I also have some alternative renders created at the same time. Note these aren’t as “clean” as the one above due to less time spent rendering.</p>
+<p>Here are some alternate renders made in the process of creating the above image. I heavily experimented with different configurations of noise for generating the clouds, as well as path tracing configurations to render them more quickly. These appear grainier due to being rendered in minutes instead of hours.</p>
 
 <p><img src="/assets/images/airwaves1.webp" alt="Abstract CGI of clouds at sunset in the form of waves" />
 <img src="/assets/images/airwaves2.webp" alt="Abstract CGI of clouds at sunset in the form of waves" /></p>

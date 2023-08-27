@@ -8,12 +8,12 @@
     <link rel="shortcut icon" href="http://localhost:4000/favicon.ico" />
   </head>
   <body>
-    <img class="banner-image" src="/assets/images/pixelator.png" decode="async" alt="Abstract background art">
+    <img class="banner-image" src="/assets/images/lights1.webp" decode="async" alt="Screenshot of Ultra Lights 2D">
 <div class="banner-gradient"></div>
     <div class="wrapper-page">
       <div class="wrapper-inner-page">
         <main>
-          <div class="site-header">
+          <header>
   <h1 class="title">2D Lighting Engine</h1>
   <nav>
     
@@ -22,33 +22,35 @@
       <a href="/about.html" >About Me</a>
     
   </nav>
-</div>
+</header>
           
           <small>Posted 8-22-2023</small>
           
-          <figure><img src="/assets/images/lights1.webp" alt="Screenshot of Ultra Lights 2D" /><figcaption>Screenshot of <em>Ultra Lights 2D</em></figcaption></figure>
-
-<h2 id="overview">Overview</h2>
+          <h1 tabindex="0">Overview</h1>
 
 <p>This is a 2D fully dynamic real-time lighting engine I built that’s capable of rendering shadows with penumbra and antumbra. Colors are mixed together in high dynamic range, and the results are tone mapped via an <a href="https://knarkowicz.wordpress.com/2016/01/06/aces-filmic-tone-mapping-curve/">ACES filmic tonemapping curve</a>. The result is a colorful and suprisingly accurate light and shadow renderer. The best part is that it’s <em>very</em> fast. The scene above runs at thousands of frames per second on my machine, and it’s targeted to support typical consumer-grade laptops. All of this took well over a year of development (2022-2023), and I’d like to refine it even further for potential commercial use.</p>
 
-<h2 id="details">Details</h2>
+<p>This system is only possible due to <a href="https://slembcke.github.io/SuperFastSoftShadows">Slembcke’s lighting system</a>. I reverse-engineered his WebGL implementation for use in Game Maker: Studio 2, which is my preferred game engine. Most of this could theoretically be ported back into WebGL. I fixed an issue his version has with shadow geometry clipping, added <a href="https://momentsingraphics.de/BlueNoise.html">blue noise dithering</a> for smoother gradients, and HDR colors and tone mapping.</p>
 
-<p>The shadow system is based off of <a href="https://slembcke.github.io/SuperFastSoftShadows">Slembcke’s lighting system</a>. I reverse-engineered his WebGL implementation for use in Game Maker: Studio 2, which is my preferred game engine. Most of this could theoretically be ported back into WebGL. I fixed an issue his version has with shadow geometry clipping, added <a href="https://momentsingraphics.de/BlueNoise.html">blue noise dithering</a> for smoother gradients, and HDR colors and tone mapping.</p>
+<h1 tabindex="0">What do shadows even look like anyway?</h1>
 
-<figure class="less-width"><img src="/assets/images/lightmesh.webp" alt="Shadow geometry" loading="lazy" /><figcaption>Shadow geometry</figcaption></figure>
+<figure><img src="/assets/images/antumbra.webp" alt="CGI rendering of shadows with antumbra" loading="lazy" /><figcaption>Orthographic path-traced render of shadows with antumbra</figcaption></figure>
 
-<p>To project shadows, an index of static geometry is pulled into memory. A vertex shader then projects new points from this, extruding them away from a light source out to infinity via homogenous coordinates. The image above was created with <a href="https://renderdoc.org/">RenderDoc,</a> a program which allows for detailed graphics debugging.</p>
+<p>Once we’ve generated</p>
 
-<p><br /></p>
+<h1 tabindex="0">Shadow Geometry</h1>
 
-<figure class="less-width"><img src="/assets/images/dithering.webp" alt="Infographic that demonstrates color banding and dithering" loading="lazy" /><figcaption>This image exaggerates how dithering can resolve color banding</figcaption></figure>
+<figure><img src="/assets/images/lightmesh.webp" alt="Shadow geometry screenshot" loading="lazy" /><figcaption>Shadow geometry produced from a light placed in the center of the screen</figcaption></figure>
+
+<p>At run-time, a configurable grid of polygons is generated <a href="https://en.wikipedia.org/wiki/Gift_wrapping_algorithm">via the gift wrapping algorithm.</a> To project shadows, an index of this static world geometry is pulled into memory. A vertex shader then projects new points from this, extruding them away from a light source out to infinity via homogenous coordinates. The image above was created with <a href="https://renderdoc.org/">RenderDoc,</a> a program which allows for detailed graphics debugging.</p>
+
+<h2 tabindex="0">Unforseen Consequences</h2>
+
+<figure><img src="/assets/images/dithering.webp" alt="Infographic that demonstrates color banding and dithering" loading="lazy" /><figcaption>This image exaggerates how dithering can resolve color banding</figcaption></figure>
 
 <p>One of the downsides of the shadow system is that they have to be drawn in 8-bit textures. This creates a percieved lack of detail dubbed “color banding”. Thankfully, blue noise is a great solution to this issue. The image above shows the effect it can have on an obsolete version of the engine.</p>
 
-<p><br /></p>
-
-<h2 id="gallery">Gallery</h2>
+<h1 tabindex="0">Gallery</h1>
 
 <p><img src="/assets/images/lights2.webp" alt="Screenshot of Ultra Lights 2D" loading="lazy" />
 <img src="/assets/images/lights3.webp" alt="Screenshot of Ultra Lights 2D" loading="lazy" />
