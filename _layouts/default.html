@@ -11,8 +11,8 @@
     {% include banner.html %}
     <div class="wrapper-page">
       <div class="wrapper-inner-page">
-        {% include navigation.html %}
         <main>
+          {% include navigation.html %}
           {{ content }}
           <div class="gallery-grid">
             {% for post in site.posts %}
