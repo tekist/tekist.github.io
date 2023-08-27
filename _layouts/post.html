@@ -11,11 +11,11 @@
     {% include banner.html %}
     <div class="wrapper-page">
       <div class="wrapper-inner-page">
-        {% include navigation.html %}
-        {% if page.title != "About Me" %}
-        <small>Posted {{ page.date | date: "%-m-%d-%Y" }}</small>
-        {% endif %}
         <main>
+          {% include navigation.html %}
+          {% if page.title != "About Me" %}
+          <small>Posted {{ page.date | date: "%-m-%d-%Y" }}</small>
+          {% endif %}
           {{ content }}
         </main>
         {% include footer.html %}
