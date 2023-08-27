@@ -13,10 +13,15 @@ $thumbnailSize: 320px;
 h1{
   color: white;
   margin: auto;
+  margin: .75em 0 .5em;
 }
 
-h2 {
-  margin: 1em 0 .5em 0;
+h1, h2{
+  font-weight: 400;
+}
+
+h2, h3 {
+  margin: 1em 0 0 0;
 }
 
 p {
@@ -52,7 +57,6 @@ figcaption {
   padding: .2em 0;
   margin: 0;
   text-shadow: 0px 0px 4px white;
-  font-weight: 400;
 }
 
 nav{
@@ -76,7 +80,7 @@ nav{
     background-color: hsl(240, 38%, 10%);;
     font-size: 1.25em;
     margin: 2px 0;
-    padding: 6px 0;
+    padding: .4em 0;
     color: white;
     flex: 2;
     text-decoration: none;
@@ -104,10 +108,6 @@ nav{
 
 main{
   margin: 0 1em;
-
-  h1, h2, h3 {
-    margin: 1em 0 0 0;
-  }
 
   img{
     width: 100%;
