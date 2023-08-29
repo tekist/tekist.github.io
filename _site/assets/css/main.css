@@ -267,6 +267,9 @@ footer {
 /*|| Font-size for medium screens and larger */
 @media screen and (min-width: 1080px) {
   /* Ensure proper page anchoring on asset load-in */
+  .no-min-height {
+    min-height: unset;
+  }
   .min-height-640px {
     min-height: 640px;
   }

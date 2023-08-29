@@ -12,9 +12,8 @@ $thumbnailSize: 320px;
 }
 
 /* Helper utility classes */
-.no-margin {
-  margin: 0;
-}
+.no-margin {margin: 0;}
+
 p {
   color: white;
   line-height: 1.5em;
@@ -165,7 +164,7 @@ main {
     margin: auto;
     object-fit: cover;
   }
-
+  
   p, li >{
     a:visited{
       color: #f148ff;
@@ -287,6 +286,7 @@ footer {
 /*|| Font-size for medium screens and larger */
 @media screen and (min-width: 1080px) {
   /* Ensure proper page anchoring on asset load-in */
+  .no-min-height {min-height: unset;}
   .min-height-640px{ min-height: 640px; }
   .min-height-720px{ min-height: 720px; }
   .min-height-1024px{ min-height: 1024px; }
