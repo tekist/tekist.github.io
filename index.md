@@ -1,5 +1,4 @@
 ---
-my_string: hello there
 layout: default
-title: Welcome
+title: Portfolio Gallery
 ---
