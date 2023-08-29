@@ -2,7 +2,7 @@
 layout: post
 title:  "2D Lighting Engine"
 altText: "Screenshot of Ultra Lights 2D"
-thumbnail: /assets/images/lights-thumb.webp
+thumbnail: /assets/images/thumb-lights.webp
 banner: /assets/images/lights1.webp
 ---
 
