@@ -10,6 +10,10 @@
   margin: 0;
 }
 
+.margin-top-1rem {
+  margin-top: 1rem;
+}
+
 p {
   color: white;
   line-height: 1.5em;
