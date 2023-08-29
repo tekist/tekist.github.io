@@ -157,6 +157,7 @@ main {
 main img {
   width: 100%;
   margin: auto;
+  object-fit: cover;
 }
 main p a:visited, main li > a:visited {
   color: #f148ff;
