@@ -1,6 +1,7 @@
 ---
 layout: post
 title: About Me
+banner: /assets/images/lights4.webp
 ---
 
 Hello! My name's Garrett Haynes and I'm obsessed with technology. At the age of 12, I began programming games as a hobby. This hobby blossomed
