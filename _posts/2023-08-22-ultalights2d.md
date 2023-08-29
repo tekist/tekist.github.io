@@ -1,40 +1,109 @@
 ---
 layout: post
 title:  "2D Lighting Engine"
-image: /assets/images/lights.webp
-altText: Screenshot of Ultra Lights 2D
-image0: /assets/images/lights1.webp
-image1: /assets/images/lightmesh.webp
-image2: /assets/images/dithering.webp
-image3: /assets/images/lights2.webp
-image4: /assets/images/lights3.webp
-image5: /assets/images/lights4.webp
+altText: "Screenshot of Ultra Lights 2D"
+thumbnail: /assets/images/lights-thumb.webp
+banner: /assets/images/lights1.webp
 ---
 
-<figure><img src="{{ page.image0 | relative_url }}" alt="Screenshot of Ultra Lights 2D"><figcaption>Screenshot of <em>Ultra Lights 2D</em></figcaption></figure>
+<figure class="featured-image" >
+  <a href="{{ "/assets/images/lights2.webp" | relative_url }}" target="_blank">
+    <img src="{{ "/assets/images/pre_lights2.webp" | relative_url }}" alt="Screenshot of Ultra Lights 2D" decode="sync">
+  </a>
+  <figcaption>Screenshot of 
+    <em>Ultra Lights 2D</em>
+  </figcaption>
+</figure>
 
-## Overview 
+<h1 tabindex="0">Overview</h1>
 
-This is a 2D fully dynamic real-time lighting engine I built that's capable of rendering shadows with penumbra and antumbra. Colors are mixed together in high dynamic range, and the results are tone mapped via an [ACES filmic tonemapping curve](https://knarkowicz.wordpress.com/2016/01/06/aces-filmic-tone-mapping-curve/). The result is a colorful and suprisingly accurate light and shadow renderer. The best part is that it's *very* fast. The scene above runs at thousands of frames per second on my machine, and it's targeted to support typical consumer-grade laptops. All of this took well over a year of development (2022-2023), and I'd like to refine it even further for potential commercial use.
+*Ultra Lights 2D* is an advanced real-time 2D lighting engine I built for GameMaker based off a system called [Super Fast Soft Shadows](https://slembcke.github.io/SuperFastSoftShadows). It's easily one of my proudest achievements in software, and was the project that taught me how to program shaders.
 
-## Details
+I won't go into too in-depth on integration details in this article, but will provide some insight into the unique aspects of my system and development process.
 
-The shadow system is based off of [Slembcke's lighting system](https://slembcke.github.io/SuperFastSoftShadows). I reverse-engineered his WebGL implementation for use in Game Maker: Studio 2, which is my preferred game engine. Most of this could theoretically be ported back into WebGL. I fixed an issue his version has with shadow geometry clipping, added [blue noise dithering](https://momentsingraphics.de/BlueNoise.html) for smoother gradients, and HDR colors and tone mapping.
+<h2 tabindex="0" class="no-margin">Features:</h2>
+- Full shadow rendering that includes umbra, penumbra, and antumbra
+- Provides area lights/shadows for circular light sources
+- High dynamic range colors and shadows (16 or 32-bit RGBA)
+- Animated blue noise dithering for smoother shadow gradients
+- It's highly optimized. It can run at thousands of frames per second on PCs with dedicated GPUs.
+- Most features are possible to integrate into WebGL for use in browsers 
 
-<figure class="less-width"><img src="{{ page.image1 | relative_url }}" alt="Shadow geometry" loading="lazy"><figcaption>Shadow geometry</figcaption></figure>
+<details>
+  <summary>Backstory</summary>
+  <p>
+    In 2016, I came across this <a href="https://www.youtube.com/watch?v=AslPHY2Bomc" target="_blank">2D lighting demo</a> by a YouTuber named Slembcke. I always enjoy seeing what independent developers built, but this one was especially fascinating to me. It seemed to actually simulate area lighting to some degree without major performance costs. At the time, path/ray-tracing and radiosity were the only systems that I knew of which achieved this effect, but only with major drawbacks. Since there was nothing else quite like it, I often wondered how it worked, and if I could ever create something like it. At the time I barely even knew what shaders were.
+  </p>
+  <p>
+    Fast forward to 2022 and I was interested in lighting systems again. While browsing for images of shadow antumbras for research, an image from <a href="https://slembcke.github.io/SuperFastSoftShadows">this post</a> popped up. I was astonished and ecstatic. It had only been about 6 months since he posted it. The post itself goes in depth on how the shadow system actually works, what the theory is, and also provides a WebGL example for people to try out. Finally, I had plenty of information to build and understand the system.
+  </p>
+</details>
 
-To project shadows, an index of static geometry is pulled into memory. A vertex shader then projects new points from this, extruding them away from a light source out to infinity via homogenous coordinates. The image above was created with [RenderDoc,](https://renderdoc.org/) a program which allows for detailed graphics debugging.
+<details>
+  <summary>Gallery</summary>
+  <a href="{{ "/assets/images/lights1.webp" | relative_url }}" target="_blank">
+    <img class="post-gallery" src="{{ "/assets/images/pre_lights1.webp" | relative_url }}" target="_blank" alt="Screenshot of Ultra Lights 2D" loading="lazy">
+  </a>
+  <a href="{{ "/assets/images/lights3.webp" | relative_url }}" target="_blank">
+    <img class="post-gallery" src="{{ "/assets/images/pre_lights3.webp" | relative_url }}" target="_blank" alt="Screenshot of Ultra Lights 2D" loading="lazy">
+  </a>
+  <a href="{{ "/assets/images/lights4.webp" | relative_url }}" target="_blank">
+    <img class="post-gallery" src="{{ "/assets/images/lights4.webp" | relative_url }}" target="_blank" alt="Screenshot of Ultra Lights 2D" loading="lazy">
+  </a>
+    <a href="{{ "/assets/images/lights5.webp" | relative_url }}" target="_blank">
+    <img class="post-gallery" src="{{ "/assets/images/lights5.webp" | relative_url }}" target="_blank" alt="Screenshot of Ultra Lights 2D" loading="lazy">
+  </a>
+</details>
 
-<br/>
+<h1 tabindex="0">What do shadows <em>really</em> look like anyway?</h1>
 
-<figure class="less-width"><img src="{{ page.image2 | relative_url }}" alt="Infographic that demonstrates color banding and dithering" loading="lazy"><figcaption>This image exaggerates how dithering can resolve color banding</figcaption></figure>
+<figure>
+  <a href="{{ "/assets/images/antumbra.webp" | relative_url }}" target="_blank">
+    <img class="min-height-640px" src="{{ "/assets/images/antumbra.webp" | relative_url }}" alt="Rendering of shadows with antumbra">
+  </a>
+  <figcaption>Orthographic path-traced render of shadows with antumbra</figcaption>
+</figure>
 
-One of the downsides of the shadow system is that they have to be drawn in 8-bit textures. This creates a percieved lack of detail dubbed "color banding". Thankfully, blue noise is a great solution to this issue. The image above shows the effect it can have on an obsolete version of the engine.
+[Antumbras](https://en.wikipedia.org/wiki/Umbra,_penumbra_and_antumbra) are typically not seen in real-time graphics, and it's not something I usually think about in the real world either. It occurs when light from a single source goes *around* all sides of an object. If you've ever seen a total solar eclipse in person, then you know what it's like to be in the antumbra of the Moon. So shadows get darker as the light becomes blocked, a region called *penumbra.* If the entire object is encompassed by the same light source, it will produce *antumbra*, a region where the shadow gets brighter.
 
-<br/>
+In order to get a good idea of what the phenomenon should look like, I did a few high fidelity path-traced renders in Blender. Only direct illumination is simulated, meaning there is no light bouncing off of surfaces. A simple diffuse surface is used in the background and the light source is kept as short as possible while still producing enough rays to fill the scene. It's rendered from an orthographic perspective as well. I did a few different variations to get a sense for how different kinds of geometry should cast shadows from large light sources.
 
-## Gallery
+<figure>
+  <a href="{{ "/assets/images/antumbra2.webp" | relative_url }}" target="_blank">
+    <img class="min-height-1024px" src="{{ "/assets/images/pre_antumbra2.webp" | relative_url }}" alt="Rendering of a 2D scene of shapes casting antumbras">
+  </a>
+  <figcaption>Path-traced render of multiple types of shapes casting antumbras</figcaption>
+</figure>
 
-<img src="{{ page.image3 | relative_url }}" alt="Screenshot of Ultra Lights 2D" loading="lazy">
-<img src="{{ page.image4 | relative_url }}" alt="Screenshot of Ultra Lights 2D" loading="lazy">
-<img src="{{ page.image5 | relative_url }}" alt="Screenshot of Ultra Lights 2D" loading="lazy">
+<h1 tabindex="0">Shadow Geometry</h1>
+
+<figure>
+  <a href="{{ "/assets/images/lightmesh.webp" | relative_url }}" target="_blank">
+    <img src="{{ "/assets/images/lightmesh.webp" | relative_url }}" alt="Shadow geometry screenshot">
+  </a>
+  <figcaption>Shadow geometry produced from a light placed in the center of the screen</figcaption>
+</figure>
+
+At run-time, a configurable grid of polygons is generated via [the gift wrapping algorithm](https://en.wikipedia.org/wiki/Gift_wrapping_algorithm) for the world's geometry. Any polygonal shape can be used for the lighting, but this only produces convex polygons due to a limitation of the physics engine. To project shadows, an index of the vertices of this static geometry is kept in memory. 
+
+Once rendering starts, a vertex shader then projects new points from this, extruding them away from a light source out to infinity via homogenous coordinates. A single quad is used for each side of a polygon. The extruded end points of this quad are used to to test how "visible" they are from a particular light source. The pixel shader can then do a straight-forward interpolation between the points, producing a shadow gradient. Unfortunately, this also means there's a good amount of overdraw as polygons often end up covering one another, but most modern GPUs can power through this.
+
+<h1 tabindex="0">Dithering</h1>
+
+<figure>
+  <a href="{{ "/assets/images/dither.webp" | relative_url }}" target="_blank">
+    <img class="min-height-720px" src="{{ "/assets/images/pre_dither.webp" | relative_url }}" alt="Infographic that demonstrates color banding and dithering">
+  </a>
+  <figcaption>This image exaggerates how dithering can resolve color banding</figcaption>
+</figure>
+
+For most of the development cycle, shadows could only be rendered in 8-bit channels (0-255). This creates a perceived lack of detail dubbed "color banding", which is common in lighting systems. Thankfully, blue noise is a great solution to this issue. The image above shows the effect it can have on an obsolete version of the engine. Much later on this was further alleviated with the introduction of HDR colors and shadowmaps.
+
+<h1 tabindex="0">Future Plans</h1>
+
+<p class="no-margin">I want to continue refining this system for use in future projects. Here are some of the features I plan to implement:</p>
+- Multiple quality modes
+- Convex polygonal light sources
+- Tone mapping/automatic exposure (currently experimental)
+- Shadow geometry culling
+- Moving occluders
