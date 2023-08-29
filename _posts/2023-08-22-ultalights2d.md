@@ -50,9 +50,6 @@ I won't go into too in-depth on integration details in this article, but will pr
   <a href="{{ "/assets/images/lights4.webp" | relative_url }}" target="_blank">
     <img class="post-gallery" src="{{ "/assets/images/lights4.webp" | relative_url }}" target="_blank" alt="Screenshot of Ultra Lights 2D" loading="lazy">
   </a>
-    <a href="{{ "/assets/images/lights5.webp" | relative_url }}" target="_blank">
-    <img class="post-gallery" src="{{ "/assets/images/lights5.webp" | relative_url }}" target="_blank" alt="Screenshot of Ultra Lights 2D" loading="lazy">
-  </a>
 </details>
 
 <h1 tabindex="0">What do shadows <em>really</em> look like anyway?</h1>
