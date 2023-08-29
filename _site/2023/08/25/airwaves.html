@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="http://localhost:4000/favicon.ico" />
   </head>
   <body>
-    <img class="banner-image" src="" decode="async" alt="Abstract CGI of clouds at sunset in the form of waves">
+    <img class="banner-image" src="/assets/images/airwaves.webp" decode="async" alt="Abstract CGI of clouds at sunset in the form of waves" loading="lazy">
 <div class="banner-gradient"></div>
     <div class="wrapper-page">
       <div class="wrapper-inner-page">
@@ -32,7 +32,7 @@
 
 <h2 id="technical-details">Technical Details</h2>
 
-<p><em>Generative noise</em> is nearly the perfect solution for <a href="https://en.wikipedia.org/wiki/Procedural_generation">procedurally generating</a> large volumes of clouds and smoke. It’s generated in the form of textures . The noise retains the same detail regardless of the shape/size of the volume itself. Light can scatter through the volume 14 times per sample per pixel, and there are 6000 samples in total, meaning there are ~174 billion samples contained in this image. Post-processing was done via GIMP. I learned many things about shaders, volumes, and path-tracing while making this.</p>
+<p><em>Generative noise</em> is nearly the perfect solution for <a href="https://en.wikipedia.org/wiki/Procedural_generation">procedurally generating</a> large volumes of clouds and smoke. It’s generated in the form of textures. The noise retains the same detail regardless of the shape/size of the volume itself. Light can scatter through the volume 14 times per sample per pixel, and there are 6000 samples in total, meaning there are ~174 billion samples contained in this image. Post-processing was done via GIMP. I learned many things about shaders, volumes, and path-tracing while making this.</p>
 
 <p>Rendering in graphics can be intensive. Volume rendering is particularly intensive. The total rendering time was about five and a half hours on an RTX 3080ti.</p>
 
