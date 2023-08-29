@@ -6,4 +6,9 @@ altText: Digital abstract background art
 banner: /assets/images/pixelator.png
 ---
 
-![Digital abstract background art]({{ page.image | relative_url }})
+<figure>
+  <a href="{{ page.banner | relative_url }}" target="_blank">
+    <img class="no-min-height" src="{{ page.banner | relative_url }}" alt="Digital abstract art">
+  </a>
+  <figcaption>Digital abstract art "Pixelator"</figcaption>
+</figure>
