@@ -158,12 +158,11 @@ main > details > p:last-child {
 
 /*|| Main */
 main {
-  margin: 0 1rem;
+  margin: 0 .5rem;
 
   img{
     width: 100%;
     margin: auto;
-    min-height: 576px;
   }
 
   p, li >{
@@ -311,6 +310,10 @@ footer {
 
     .less-width {
       width: 75%;
+    }
+
+    img {
+      min-height: 576px;
     }
   }
 

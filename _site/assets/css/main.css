@@ -152,12 +152,11 @@ main > details > p:last-child {
 
 /*|| Main */
 main {
-  margin: 0 1rem;
+  margin: 0 0.5rem;
 }
 main img {
   width: 100%;
   margin: auto;
-  min-height: 576px;
 }
 main p a:visited, main li > a:visited {
   color: #f148ff;
@@ -293,6 +292,9 @@ footer {
   }
   main .less-width {
     width: 75%;
+  }
+  main img {
+    min-height: 576px;
   }
   .featured-image {
     height: 75%;
