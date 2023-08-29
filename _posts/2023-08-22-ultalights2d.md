@@ -81,7 +81,7 @@ In order to get a good idea of what the phenomenon should look like, I did a few
   <a href="{{ "/assets/images/lightmesh.webp" | relative_url }}" target="_blank">
     <img src="{{ "/assets/images/lightmesh.webp" | relative_url }}" alt="Shadow geometry screenshot">
   </a>
-  <figcaption>Shadow geometry produced from a light placed in the center of the screen</figcaption>
+  <figcaption>Shadow geometry produced from an unseen light source placed in the center of the screen</figcaption>
 </figure>
 
 At run-time, a configurable grid of polygons is generated via [the gift wrapping algorithm](https://en.wikipedia.org/wiki/Gift_wrapping_algorithm) for the world's geometry. Any polygonal shape can be used for the lighting, but this only produces convex polygons due to a limitation of the physics engine. To project shadows, an index of the vertices of this static geometry is kept in memory. 
