@@ -19,7 +19,7 @@
             <div class="gallery-item" >
               <a href="{{ post.url }}">
                 <p class="gallery-text">{{ post.title }}</p>
-                <img class="gallery-thumbnail" src="{{ post.thumbnail }}" alt="{{ post.altText }}">
+                <img class="gallery-thumbnail" src="{{ post.thumbnail }}" alt="{{ post.altText }}" loading="lazy">
               </a>
             </div>
             {% endfor %}
