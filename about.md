@@ -7,7 +7,7 @@ banner: /assets/images/lights4.webp
 <p class="margin-top-1rem">Hello! My name's Garrett Haynes and I'm obsessed with technology. At the age of 12, I began programming games as a hobby. This hobby blossomed
 into an award-winning passion. Interactive media is at the heart of my interests.</p>
 
-In high school, I won a 24 hour programming jam for a game I solo developed called QWERTY. Only a few months later I placed second at a game jam hosted by my local community. I also began [a YouTube channel](https://www.youtube.com/channel/UC8QdG3gEgAowSyI9ZRwSwbQ) around this time which would go on to accrue millions of views. My most popular video was even featured by mainstream gaming outlets [such as PC Gamer](https://www.pcgamer.com/see-a-city-of-200000-swept-away-by-sewage-in-cities-skylines/) and Kotaku.
+In high school, I won a 24 hour programming jam for a game I solo developed called QWERTY. Only a few months later I placed second at a game jam hosted by my local community college. I also began [a YouTube channel](https://www.youtube.com/channel/UC8QdG3gEgAowSyI9ZRwSwbQ) around this time which would go on to accrue millions of views. My most popular video was even featured by mainstream gaming outlets [such as PC Gamer](https://www.pcgamer.com/see-a-city-of-200000-swept-away-by-sewage-in-cities-skylines/) and Kotaku.
 
 In college, I expanded my palette of skills to encompass web development and graphics programming. I taught myself graphics
 and shader programming to build [an advanced 2D lighting engine]({% post_url 2023-08-22-ultalights2d %}) for use in
