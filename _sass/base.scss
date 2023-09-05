@@ -66,6 +66,7 @@ header {
 }
 
 .title {
+  text-align: center;
   font-size: 1.5rem;
   padding: .2em 0;
   margin: 0;
@@ -211,8 +212,7 @@ body {
   grid-template-columns: repeat(1, 1fr);
   grid-auto-rows: 66vh;
   gap: 10px;
-  margin-top: 1.5em;
-  
+  margin-top: .5em;
 
   /* Manually positioning the grid for the time being */
   // chat-room app
@@ -299,6 +299,7 @@ footer {
 
   /* Title header */
   .title {
+    text-align: left;
     line-height: 1.5em;
     flex: 6;
     padding: 0 .2em 0 0;
@@ -342,6 +343,7 @@ footer {
   }
 
   .gallery-grid {
+    text-align: left;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 320px auto;
